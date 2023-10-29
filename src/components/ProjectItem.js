@@ -1,18 +1,15 @@
-import React from "react";
+import { render, screen } from '@testing-library/react';
+import ProjectItem from './ProjectItem';
 
-function ProjectItem({ name, about, technologies }) {
-  return (
-    <div className="project-item">
-      <h3>{name}</h3>
-      <p>{about}</p>
-      <div className="technologies">
-        {/* render a <span> for each technology in the technologies array */}
-        {technologies.map((technology) => (
-          <span className="technology">{technology}</span>
-        ))}
-      </div>
-    </div>
-  );
-}
+const handleClick = jest.fn();
 
-export default ProjectItem;
+const project = {
+  name: 'Project 1',
+  about: 'This is a project',
+  technologies: ['React', 'JavaScript', 'HTML']
+};
+
+render(<ProjectItem name={project.name} about={project.about} technologies={project.technologies} handleClick={handleClick} />);
+
+expect(handleClick).not.toHaveBeenCalled();
+expect(screen.getByText('Project 1')).toBeInTheDocument();
