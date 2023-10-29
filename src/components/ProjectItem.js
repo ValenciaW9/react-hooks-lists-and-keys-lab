@@ -7,7 +7,6 @@ function ProjectItem({ name, about, technologies }) {
       <p>{about}</p>
       <div className="technologies">
         {/* render a <span> for each technology in the technologies array */}
-        <a href="#">Project Item</a>
         {technologies.map((technology) => (
           <span className="technology">{technology}</span>
         ))}
