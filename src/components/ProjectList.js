@@ -6,6 +6,7 @@ function ProjectList({ projects }) {
   return (
     <div id="projects">
       <h2>My Projects</h2>
+      <a href="#projects">projects</a>
       <div id="project-list">{/* render ProjectItem components here */}</div>
     </div>
   );

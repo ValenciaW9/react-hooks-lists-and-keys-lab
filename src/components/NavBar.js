@@ -1,9 +1,21 @@
+
 import React from "react";
+import ProjectItem from "./ProjectItem";
+import NavBar from "./NavBar";
 
-function NavBar() {
-  const links = ["home", "about", "projects"];
+function MyComponent(props) {
+  const links = ["home", "about", "links", "projects"];
 
-  return <nav>{/* display an <a> tag for each link here */}</nav>;
+  return (
+    <div>
+      <a href="https://www.google.com">google</a>
+      {links.map((link) => (
+        <a key={link} href={`#${link}`}>
+          {link}
+        </a>
+      ))}
+    </div>
+  );
 }
 
-export default NavBar;
+export default MyComponent;
